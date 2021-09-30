@@ -1,4 +1,5 @@
 {
+    "version": "1.0.0",
     "name": "hcesrl/php-responsive-image-sizes",
     "description": "Retrieve the correct sizes for a responsive image based on its intrinsic width and its width on screen",
     "autoload": {
