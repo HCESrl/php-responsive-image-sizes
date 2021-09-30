@@ -58,7 +58,7 @@ class BaseSizes
     private $configuredSizes = [];
 
     public function __construct(BaseSizesType $baseSizesType = null, array $customSizes = []) {
-        switch ($baseSizesType) {
+        switch ($baseSizesType->getValue()) {
             case BaseSizesType::Custom:
                 $this->setSizes($customSizes);
                 break;
@@ -76,7 +76,7 @@ class BaseSizes
         if (count($this->configuredSizes) === 0) {
             throw new \Exception('Custom sizes not set yet, please read the docs.');
         }
-        return isset($deviceType) ? $this->configuredSizes[(string)$deviceType] : $this->configuredSizes;
+        return isset($deviceType) ? $this->configuredSizes[$deviceType->getValue()] : $this->configuredSizes;
     }
 
     public function setSizes(array $customSizes) : void
