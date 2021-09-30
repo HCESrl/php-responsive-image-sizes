@@ -1,0 +1,19 @@
+{
+    "name": "hcesrl/php-responsive-image-sizes",
+    "description": "Retrieve the correct sizes for a responsive image based on its intrinsic width and its width on screen",
+    "autoload": {
+        "psr-4": {
+            "Hcesrl\\PhpResponsiveImageSizes\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "HCE Srl",
+            "email": "support@hce.it"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "marc-mabe/php-enum": "^4.4"
+    }
+}
