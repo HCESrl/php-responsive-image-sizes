@@ -57,6 +57,13 @@ class BaseSizes
 
     private $configuredSizes = [];
 
+    /**
+     * If BaseSizesType value is Custom, an array of custom sizes is required
+     *
+     * @param BaseSizesType|null $baseSizesType
+     * @param array $customSizes
+     * @throws \Exception
+     */
     public function __construct(BaseSizesType $baseSizesType = null, array $customSizes = []) {
         switch ($baseSizesType->getValue()) {
             case BaseSizesType::Custom:
@@ -71,6 +78,13 @@ class BaseSizes
         }
     }
 
+    /**
+     * Get the declared sizes
+     *
+     * @param DeviceType|null $deviceType
+     * @return array|int[]|\int[][]
+     * @throws \Exception
+     */
     public function getSizes(DeviceType $deviceType = null) : array
     {
         if (count($this->configuredSizes) === 0) {
@@ -79,6 +93,12 @@ class BaseSizes
         return isset($deviceType) ? $this->configuredSizes[$deviceType->getValue()] : $this->configuredSizes;
     }
 
+    /**
+     * Set sizes to compute
+     *
+     * @param array $customSizes
+     * @throws \Exception
+     */
     public function setSizes(array $customSizes) : void
     {
         if (array_key_exists(DeviceType::Desktop, $customSizes) && count($customSizes[DeviceType::Desktop]) > 0 &&
