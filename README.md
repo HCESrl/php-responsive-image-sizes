@@ -80,3 +80,12 @@ $customSizes = [
 ];
 var_dump(ResponsiveImagesSizes::getResponsiveSizes(DeviceType::All(), new BaseSizes(BaseSizesType::Custom(), $customSizes)));
 ```
+
+Output sample:
+```
+(
+    [0] => 1024
+    [1] => 1280
+    [2] => 1440
+)
+```
