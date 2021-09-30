@@ -44,7 +44,7 @@ var_dump(ResponsiveImagesSizes::getResponsiveSizes(DeviceType::All(), new BaseSi
 * **$widthOnPage** integer, default is 100, see js library docs for further informations;
 * **$topSize** integer, default is 1920, see js library docs for further informations;
 
-if you want to use a custom set of BaseSizes, you should declare an array that matches the following schema to use as second constructor argument:
+if you want to use a custom set of BaseSizes, you should declare an array that matches the following schema, and use it as second BaseSizes class constructor's argument:
 ```
 [
     'desktop' => [
@@ -78,5 +78,5 @@ $customSizes = [
       640
     ]
 ];
-var_dump(ResponsiveImagesSizes::getResponsiveSizes(DeviceType::All(), new BaseSizes(BaseSizesType::Custon(), $customSizes)));
+var_dump(ResponsiveImagesSizes::getResponsiveSizes(DeviceType::All(), new BaseSizes(BaseSizesType::Custom(), $customSizes)));
 ```
