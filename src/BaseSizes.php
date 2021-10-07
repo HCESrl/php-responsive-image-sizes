@@ -90,7 +90,15 @@ class BaseSizes
         if (count($this->configuredSizes) === 0) {
             throw new \Exception('Custom sizes not set yet, please read the docs.');
         }
-        return isset($deviceType) ? $this->configuredSizes[$deviceType->getValue()] : $this->configuredSizes;
+        if (isset($deviceType)) {
+            return $this->configuredSizes[$deviceType->getValue()] ;
+        } else {
+            $finalSizes = [];
+            foreach ($this->configuredSizes as $size=>$sizes) {
+                $finalSizes = array_merge($finalSizes, $sizes);
+            }
+            return array_unique($finalSizes);
+        }
     }
 
     /**

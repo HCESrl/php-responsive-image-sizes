@@ -28,7 +28,7 @@ class ResponsiveImagesSizes
 
         // check that we're not producing images that are bigger than the source image, to avoid unnecessary upsampling
         $sizes = self::checkMaxImageSize($sizes, $sourceImageWidth);
-
+        rsort($sizes);
         return $sizes;
     }
 
@@ -45,7 +45,7 @@ class ResponsiveImagesSizes
         $res = [];
         switch ($deviceType->getValue()) {
             case DeviceType::All; // images from all types, without duplicates
-                $res = array_unique(call_user_func_array('array_merge', $baseSizes->getSizes()));
+                $res = $baseSizes->getSizes();
             break;
             case DeviceType::Mobile: // tablet portrait and smartphone
                 $res = array_merge($baseSizes->getSizes(DeviceType::TabletPortrait()), $baseSizes->getSizes(DeviceType::Smartphone()));

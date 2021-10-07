@@ -1,4 +1,4 @@
-# Responsive image sizes library written in PHP
+# Responsive image sizes library ported to PHP
 
 ## Installation
 
@@ -22,7 +22,9 @@ Please add these lines to your `composer.json` file:
 then you can run `composer install` to install the library.
 
 ## Usage
-Please refer to the original javascript library documentation for further informations. 
+Please refer to the original javascript library documentation for further informations:
+https://github.com/HCESrl/responsive-image-sizes
+
 Here is a basic example:
 
 ```
