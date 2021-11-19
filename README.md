@@ -2,24 +2,7 @@
 
 ## Installation
 
-Please add these lines to your `composer.json` file:
-```
-{
-  [...]
-  "repositories": [
-    [...]
-    {
-      "type": "vcs",
-      "url": "https://github.com/HCESrl/php-responsive-image-sizes"
-    }
-  ],
-  "require": {
-    [...]
-    "hcesrl/php-responsive-image-sizes": "dev-master"
-  }
-```
-
-then you can run `composer install` to install the library.
+composer require hcesrl/php-responsive-image-sizes
 
 ## Usage
 Please refer to the original javascript library documentation for further informations:
